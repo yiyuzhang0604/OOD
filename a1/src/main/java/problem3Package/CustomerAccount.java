@@ -45,6 +45,11 @@ public class CustomerAccount {
         return update;
     }
 
+    /**
+     * @param value - the amount that need to be withdraw
+     * @return a new CustomerAccount object with the updated amount
+     */
+
     public CustomerAccount withdraw(Amount value){
         int currDollar = currBalance.getDollar();
         int currCent = currBalance.getCent();

@@ -33,15 +33,17 @@ public class Trip {
         int secDiff;
         int minDiff;
         int hrDiff;
+        int INCREMENT = 60;
+        int DECREMENT = 1;
         if(endTime.seconds < startTime.seconds){
-            endTime.seconds = endTime.seconds + 60;
-            endTime.minutes = endTime.minutes - 1;
+            endTime.seconds = endTime.seconds + INCREMENT;
+            endTime.minutes = endTime.minutes - DECREMENT;
         }
         secDiff = endTime.seconds - startTime.seconds;
 
         if(endTime.minutes < startTime.minutes){
-            endTime.minutes = endTime.minutes + 60;
-            endTime.hour = endTime.hour - 1;
+            endTime.minutes = endTime.minutes + INCREMENT;
+            endTime.hour = endTime.hour - DECREMENT;
         }
         minDiff = endTime.minutes - startTime.minutes;
         hrDiff = endTime.hour - startTime.hour;

@@ -11,14 +11,20 @@ public class TripTest {
     public Time expectedStartTime;
     public Time expectedEndTime;
     public Trip testTrip;
+    public Integer HR1 = 8;
+    public Integer HR2 = 9;
+    public Integer MIN1 = 30;
+    public Integer MIN2 = 20;
+    public Integer SEC1 = 23;
+    public Integer SEC2 = 10;
 
 
     @Before
     public void setUp() throws Exception {
         expectedStart = "Berkeley";
         expectedEnd = "Pleasanton";
-        expectedStartTime = new Time(8, 30,23);
-        expectedEndTime = new Time(9, 20,10);
+        expectedStartTime = new Time(HR1, MIN1,SEC1);
+        expectedEndTime = new Time(HR2, MIN2,SEC2);
         testTrip = new Trip(expectedStart, expectedEnd, expectedStartTime, expectedEndTime);
 
     }

@@ -22,14 +22,23 @@ public class Time {
         this.seconds = seconds;
     }
 
+    /**
+     * return hour
+     */
     public Integer getHour() {
         return hour;
     }
 
+    /**
+     * @return minutes
+     */
     public Integer getMinutes() {
         return minutes;
     }
 
+    /**
+     * @return seconds
+     */
     public Integer getSeconds() {
         return seconds;
     }
