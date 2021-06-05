@@ -39,6 +39,8 @@ public abstract class AbstractServices implements Services{
             newPrice = tenDiscount(fullPrice);
         }else if(monthly == true){
             newPrice = monthlyDiscount(fullPrice);
+        }else{
+            newPrice = fullPrice;
         }
         return newPrice;
     }
@@ -50,7 +52,7 @@ public abstract class AbstractServices implements Services{
      */
     public double monthlyDiscount(double fullPrice){
         double RATE = 0.1;
-        return fullPrice *(1 - RATE);
+        return fullPrice - fullPrice * RATE;
     }
 
     /**
@@ -66,7 +68,7 @@ public abstract class AbstractServices implements Services{
     }
     @Override
     public String toString(){
-        return String.format("address = %s size = %s monthly = %b prvious = %d",
+        return String.format("address='%s' size=%s monthly=%b previous=%d",
                              address,propertySize,monthly,previousCarry);
     }
 

@@ -33,7 +33,11 @@ public abstract class Interior extends AbstractServices{
         }else if(petNum > 2){
             RATE = 0.07;
         }
-        return fullPrice * RATE;
+        return fullPrice * RATE + fullPrice;
+    }
+
+    public int getPetNum() {
+        return petNum;
     }
 
     @Override
@@ -52,6 +56,6 @@ public abstract class Interior extends AbstractServices{
 
     @Override
     public String toString() {
-        return super.toString() + "pets=" +petNum;
+        return super.toString() + " pets=" +petNum;
     }
 }
