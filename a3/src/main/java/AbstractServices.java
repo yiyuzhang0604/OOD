@@ -1,5 +1,8 @@
 import java.util.Objects;
 
+/**
+ * AbstractServices is an abstrac class which provides some functions and the fields of services
+ */
 public abstract class AbstractServices implements Services{
 
     private String address;
@@ -15,7 +18,7 @@ public abstract class AbstractServices implements Services{
      * @param propertySize - the size of the property
      * @param monthly - if the services is conducted monthly
      * @param previousCarry - the number of previous services conducted
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException - throw exception
      */
     public AbstractServices(String address, PropertySize propertySize, Boolean monthly, Integer previousCarry) throws IllegalArgumentException{
         if(previousCarry < 0){

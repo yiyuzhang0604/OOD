@@ -1,5 +1,8 @@
 import java.util.Objects;
 
+/**
+ * WindowCleaning class provides functions and fields for the windowclearning service
+ */
 public class WindowCleaning extends Exterior{
     private static final Integer MAX_FLOOR = 3;
     private static final Integer MIN_FLOOR = 1;
@@ -12,7 +15,7 @@ public class WindowCleaning extends Exterior{
      * @param monthly - true if it is monthly service
      * @param previousCarry - the number of previous services
      * @param floorNums - the number of floors
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException throw exception
      */
     public WindowCleaning(String address, PropertySize propertySize, Boolean monthly, Integer previousCarry, Integer floorNums)
                         throws IllegalArgumentException{
@@ -27,7 +30,7 @@ public class WindowCleaning extends Exterior{
     }
 
     /**
-     *
+     * Calculate the price of the service
      * @return the total price for window cleaning
      */
     @Override
@@ -49,6 +52,10 @@ public class WindowCleaning extends Exterior{
         return fullPrice;
     }
 
+    /**
+     * Get the number of floors
+     * @return the number of floors
+     */
     public Integer getFloorNums() {
         return floorNums;
     }

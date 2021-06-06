@@ -18,21 +18,25 @@ public interface Services {
 
     /**
      * Test if the two services are equal
+     * @return true false
      */
     boolean equals(Object o);
 
     /**
      * Generate the hashcode for this service
+     * @return the hashcode
      */
     int hashCode();
 
     /**
      * Get the address of this service
+     * @return the address of the service
      */
     String getAddress();
 
     /**
      * Get the property size of the service
+     * @return the size of the property
      */
     PropertySize getPropertySize();
 

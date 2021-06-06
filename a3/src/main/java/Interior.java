@@ -1,5 +1,8 @@
 import java.util.Objects;
 
+/**
+ * Interior class provides functions and fields of the services
+ */
 public abstract class Interior extends AbstractServices{
     private int petNum;
 
@@ -10,7 +13,7 @@ public abstract class Interior extends AbstractServices{
      * @param monthly - true if it is monthly service
      * @param previousCarry - the number of previous services
      * @param petNum - the number of pets
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException throw exception
      */
     public Interior(String address, PropertySize propertySize, Boolean monthly, Integer previousCarry, int petNum) throws IllegalArgumentException {
         super(address, propertySize, monthly, previousCarry);
@@ -28,14 +31,21 @@ public abstract class Interior extends AbstractServices{
      */
     public double petFee(double fullPrice){
         double RATE = 0.0;
+        double SMALL_RATE = 0.03;
+        double LARGE_RATE = 0.07;
+
         if(petNum <= 2){
-            RATE = 0.03;
+            RATE = SMALL_RATE;
         }else if(petNum > 2){
-            RATE = 0.07;
+            RATE = LARGE_RATE;
         }
         return fullPrice * RATE + fullPrice;
     }
 
+    /**
+     * Get the number of pets
+     * @return the number of pets
+     */
     public int getPetNum() {
         return petNum;
     }

@@ -4,11 +4,12 @@
 public class Painting extends Interior{
     /**
      * Constructs a Painting object
-     * @param propertySize - the address of the property
+     * @param address - the address of the property
+     * @param propertySize - the size
      * @param monthly - if it is monthly service
      * @param previousCarry - the number of previous services
      * @param petNum - the number of pets
-     * @throws IllegalArgumentException - if pet number < 0
+     * @throws IllegalArgumentException throw exception
      */
     public Painting(String address, PropertySize propertySize, Boolean monthly, Integer previousCarry, int petNum) throws IllegalArgumentException {
         super(address, propertySize, monthly, previousCarry, petNum);
@@ -17,18 +18,20 @@ public class Painting extends Interior{
     /**
      * Calculate the price of the painting service
      * @return the total price
-     * @throws IllegalArgumentException
+     * @throws IllegalArgumentException throw exception
      */
     @Override
     public double calculatePrice() throws IllegalArgumentException{
         int requiredHour;
+        int MEDIUM_RATE = 16;
+        int LARGE_RATE = 24;
         switch (getPropertySize()){
             case SMALL:
             case MEDIUM:
-                requiredHour = 16;
+                requiredHour = MEDIUM_RATE;
                 break;
             case Large:
-                requiredHour = 24;
+                requiredHour = LARGE_RATE;
                 break;
             default:
                 throw new IllegalArgumentException("Invalid argument" + getPropertySize());
