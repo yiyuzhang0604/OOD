@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/yiyuzhang/Desktop/NEU/Student_repo_Yiyu_Zhang/a3/src/main/java</OriginalElement>
+  <nodes>
+    <node x="276.0" y="240.0">Plumbing</node>
+    <node x="318.25" y="80.0">AbstractServices</node>
+    <node x="347.25" y="160.0">Specialist</node>
+    <node x="720.0" y="240.0">WindowCleaning</node>
+    <node x="0.0" y="240.0">Cleaning</node>
+    <node x="75.0" y="160.0">Interior</node>
+    <node x="660.125" y="160.0">Exterior</node>
+    <node x="141.0" y="240.0">Painting</node>
+    <node x="351.75" y="0.0">Services</node>
+    <node x="0.0" y="315.0">PropertySize</node>
+    <node x="567.0" y="240.0">Gardening</node>
+    <node x="422.0" y="240.0">Electrical</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Interior" target="AbstractServices" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="129.5" y="135.0" />
+      <point x="411.75" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="AbstractServices" target="Services" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Painting" target="Interior" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="198.5" y="215.0" />
+      <point x="129.5" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Specialist" target="AbstractServices" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="WindowCleaning" target="Exterior" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="812.0" y="215.0" />
+      <point x="716.625" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Cleaning" target="Interior" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="60.5" y="215.0" />
+      <point x="129.5" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Plumbing" target="Specialist" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="339.0" y="215.0" />
+      <point x="411.75" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Gardening" target="Exterior" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="633.5" y="215.0" />
+      <point x="716.625" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Exterior" target="AbstractServices" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="716.625" y="135.0" />
+      <point x="411.75" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Electrical" target="Specialist" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="484.5" y="215.0" />
+      <point x="411.75" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="452.0" y="172.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
