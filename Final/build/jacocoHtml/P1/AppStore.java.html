@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AppStore.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Final</a> &gt; <a href="index.source.html" class="el_package">P1</a> &gt; <span class="el_source">AppStore.java</span></div><h1>AppStore.java</h1><pre class="source lang-java linenums">package P1;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
+/*
+Class AppStore contains information about two different categories of apps - approved apps,
+and apps currently under review, for approval and addition to the app store. Approved apps
+are stored into a map, where the app represents the key, and the number of downloads,
+represented as an Integer is the corresponding value.
+ */
+public class AppStore {
+
+  private Map&lt;MobileApp, Integer&gt; approvedApps;
+  private List&lt;MobileApp&gt; appsUnderReview;
+
+<span class="nc" id="L20">  public AppStore(Map&lt;MobileApp, Integer&gt; approvedApps, List&lt;MobileApp&gt; appsUnderReview) {</span>
+<span class="nc" id="L21">    this.approvedApps = approvedApps;</span>
+<span class="nc" id="L22">    this.appsUnderReview = appsUnderReview;</span>
+<span class="nc" id="L23">  }</span>
+
+  public Map&lt;MobileApp, Integer&gt; getApprovedApps() {
+<span class="nc" id="L26">    return approvedApps;</span>
+  }
+
+  public List&lt;MobileApp&gt; getAppsUnderReview() {
+<span class="nc" id="L30">    return appsUnderReview;</span>
+  }
+
+  /**
+   * Method takes in a category and a requestDate, filter the stream to only approved apps which is under the category of
+   * requestedCategory and also released after the requestedDate, and return the MobileApp as a List
+   * @param requestedCategory - the app Category we will be looking at
+   * @param requestedDate - the requestDate we will be looking at
+   * @return List&lt;Mobile&gt; that meets the criteria
+   */
+  public List&lt;MobileApp&gt; mysteryMethod(MobileAppCategory requestedCategory, LocalDate requestedDate){
+<span class="nc" id="L41">    return this.approvedApps.keySet().stream().filter(x -&gt; x.getAppCategory().equals(requestedCategory))</span>
+<span class="nc" id="L42">        .filter(y -&gt; y.getDateOfOriginalRelease().isAfter(requestedDate)).collect(Collectors.toList());</span>
+  }
+
+  private List&lt;MobileApp&gt; filterByRequestedPermissions(Integer maxNumPermissions, String permission1,
+                                                       String permission2){
+    //YOUR CODE HERE
+<span class="nc" id="L48">    return null;</span>
+  }
+
+  @Override
+  public boolean equals(Object o) {
+<span class="nc bnc" id="L53" title="All 2 branches missed.">    if (this == o) return true;</span>
+<span class="nc bnc" id="L54" title="All 2 branches missed.">    if (!(o instanceof AppStore)) return false;</span>
+<span class="nc" id="L55">    AppStore appStore = (AppStore) o;</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">    return Objects.equals(getApprovedApps(), appStore.getApprovedApps()) &amp;&amp;</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">        Objects.equals(getAppsUnderReview(), appStore.getAppsUnderReview());</span>
+  }
+
+  @Override
+  public int hashCode() {
+<span class="nc" id="L62">    return Objects.hash(getApprovedApps(), getAppsUnderReview());</span>
+  }
+
+  @Override
+  public String toString() {
+<span class="nc" id="L67">    return &quot;AppStore{&quot; +</span>
+        &quot;approvedApps=&quot; + approvedApps +
+        &quot;, appsUnderReview=&quot; + appsUnderReview +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
